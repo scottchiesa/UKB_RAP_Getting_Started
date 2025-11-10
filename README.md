@@ -38,7 +38,7 @@ DX Toolkit is the command-line interface (CLI) that lets you interact with the D
 
 To install DX Toolkit, open VS Code and select 'Terminal -> New Terminal'. Once the terminal opens at the bottom of the screen, click on the arrow next to the + sign on the right of the page (marked on screenshot) and change from powershell to bash (so the terminal recognises Linux commands).
 
-<img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/vscode.png">
+<img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/blob/main/vscode.png">
 
 
 
