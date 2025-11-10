@@ -130,6 +130,22 @@ Once you have both of these, you can create your data dictionary with the follow
 
 `dx extract_dataset project-XXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX -ddd --delimiter ","`
 
+If you get an error message telling you that software called pandas is necessary to create these files, install this using the following code then run the above code again
+
+`pip3 install pandas`
+
+This should now create three csv files starting with the word 'app' on your local machine in your current working directory. The file ending with .data_dictionary.csv can now be opened in Excel to view all of the variables available to you and will look something like the example below
+
+<img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/blob/main/ddd.png">
+
+You can also upload these files to the new folder on your RAP project space so you have them stored there too. Use a * as a wildcard to select all relevant files starting with 'app when doing so and type dx ls-l to check they have appeared as expected.
+
+`dx upload app* --destination project-XXXXXXXXXXXXXXXXX:/Tabular_Data/`
+
+Now you have your data dictionary, you can easily extract the variables you need for your analysis. Make a note of the exact entity (column 1)and variable (column 2) names you want from the data dictionary as these have to be supplied in the form 'entity.name' and be exactly as listed in the dictionary. So for example, if you wanted to extract participant sex (row 28 in the above screenshot) the variable would be called 'participant.p31'. If you wanted Spirometry Method though, you would need to decide if you wanted it at Instance 0, 1, 2, or 3 (rows 24-27 which correspond to the initial assessment visit, first repeat visit, first imaging visit, and repeat imaging visit, respectively). If it was instance 0 (baseline visit when all 500k attended), the variable would be called 'participant.p23_i0'. This can get more detailed still when there are measures that are taken repeatedly. So for systolic blood pressure for example, as this was measured twice in each person and you might want an average of the two, you would need variables 'participant.p4080_i0_a0' and 'participant.p4080_i0_a1'.
+
+
+
 
 
 
