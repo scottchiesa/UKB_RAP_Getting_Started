@@ -85,7 +85,7 @@ Before logging in for the first time, you may need to set up an API token. You c
 - Set the expiry time.  
 - Copy the token (it looks like a long string of letters and numbers).  
 
-NO wgo back to your terminal and type
+Now go back to your terminal and type
 
 `dx login`
 
@@ -95,7 +95,40 @@ If you only have one active project on the RAP you should automatically be logge
 
 `dx select`
 
-Now type either `pwd` or`dx pwd` into your terminal and you will see that each lists which directory you are currently working in on either your local machine or the RAP, respectively. 
+Now type either `pwd` or`dx pwd` into your terminal and you will see that each lists which directory you are currently working in on either your local machine or the RAP, respectively. If dx pwd shows your RAP home directory, you're logged in!
+
+
+## Creating a Data Dictionary and Extracting the Data Required for your Analysis
+
+The RAP contains two types of data, tabular (i.e. a big spreadsheet with lots of variables that have been collected over the years like age, sex, BMI, etc), and bulk (i.e. genetic data, raw scans from MRIs, etc).
+
+One of the first things you might want to do once inside the RAP is create a data dictionary that lists every tabular variable that your project contains. You can then use this to identify the variable names you need to extract for your analysis in R/Stata/etc. For many people, this will be the only UK Biobank data they ever use.
+
+First, make sure you are in your home directory (dx pwd to check) and then make a new folder to store your data in using the command
+
+`dx mkdir Tabular_Data`
+
+Now go into this folder using
+
+`dx cd ./Tabular_Data` (note the ./ which tells the RAP to go from your current RAP working directory which should be home to the new folde ryou just made)
+
+Now you need to create your data dictionary. This step only needs to be carried out once and then the necessary files will be available to use for data extraction from that point on. There are two bits of information you need here, your project id and your record ID. You can find your project-id by typing 
+
+`dx find projects`
+
+and your record id by typing 
+
+`dx ls -la`
+
+and looking for something that looks like 
+
+`closed  2025-10-29 23:45:30           app71702_20251029213934.dataset (record-XXXXXXXXXXXXXXXXX)`
+
+Once you have both of these, you can create your data dictionary with the following code
+
+`dx extract_dataset project-XXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX -ddd --delimiter ","`
+
+
 
 
 
