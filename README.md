@@ -110,13 +110,15 @@ First, make sure you are in your home directory (dx pwd to check) and then make 
 
 Now go into this folder using
 
-`dx cd ./Tabular_Data` (note the ./ which tells the RAP to go from your current RAP working directory which should be home to the new folde ryou just made)
+`dx cd ./Tabular_Data` 
 
-Now you need to create your data dictionary. This step only needs to be carried out once and then the necessary files will be available to use for data extraction from that point on. There are two bits of information you need here, your project id and your record ID. You can find your project-id by typing 
+Note the ./ which tells the RAP to go from your current RAP working directory which should be home to the new folder you just made.
+
+Now you need to create your data dictionary. This step only needs to be carried out once and then the necessary files will be available to use for data extraction from that point on. There are two bits of information you need here, your project ID and your record ID. You can find your project ID by typing 
 
 `dx find projects`
 
-and your record id by typing 
+and your record ID by typing 
 
 `dx ls -la`
 
@@ -127,6 +129,8 @@ and looking for something that looks like
 Once you have both of these, you can create your data dictionary with the following code
 
 `dx extract_dataset project-XXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX -ddd --delimiter ","`
+
+
 
 
 
