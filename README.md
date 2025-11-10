@@ -40,5 +40,28 @@ To install DX Toolkit, open VS Code and select 'Terminal -> New Terminal'. Once 
 
 <img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/blob/main/vscode.png">
 
+In the terminal, write the following
+
+`pip3 install dxpy`
+
+It may now ask you to upgrade and give you a command to copy and paste. Do this if it happens.
+
+Check if it has installed properly by typing `dx --version` and see if something like `dx-toolkit 0.360.0` appears. If it doesn't, it is probably because your computer doesn't know the path to find it, so this has to be updated manually. 
+
+To dothis, first check where it has installed by typing 
+
+`pip show dxpy`
+
+You will get a whole bunch of info, but look for the line called Location: that will look something like
+
+`C:\Users\scott\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages`
+
+Your installation will be in the Python313 folder at this location in the 'Scripts' rather than 'site-packages' folder, so something like the following
+
+`C:\Users\scott\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts`
+
+
+
+
 
 
