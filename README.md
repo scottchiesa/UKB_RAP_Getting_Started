@@ -29,7 +29,7 @@ It is also very important to understand how the filesystem works when you are mo
 
 `cd ~` Would take you back to your home directory (so from /c/User/UKB/Data to /c/)   
 `cd ..` Would take you up one level to UKB (so from /c/User/UKB/Data to /c/User/UKB/)  
-`cd ../Scripts` If your UKB folder contained folders called both Data and Scripts, this would take you directly from the former to latter (so up one directory from /c/User/UKB/Data into /c/User/UKB/ then back down into /c/User/UKB/Scripts).
+`cd ../Scripts` If your UKB folder contained folders called both Data and Scripts, this would take you directly from the former to latter (so up one directory from /c/User/UKB/Data into /c/User/UKB/ then back down into /c/User/UKB/Scripts).  
 `./` This would point to files in your current directory
 
 ## Installing DX Toolkit
