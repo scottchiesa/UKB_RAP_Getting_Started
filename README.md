@@ -46,9 +46,13 @@ In the terminal, write the following
 
 It may now ask you to upgrade and give you a command to copy and paste. Do this if it happens.
 
-Check if it has installed properly by typing `dx --version` and see if something like `dx-toolkit 0.360.0` appears. If it doesn't, it is probably because your computer doesn't know the path to find it, so this has to be updated manually. 
+Check if it has installed properly by typing 
 
-To dothis, first check where it has installed by typing 
+`dx --version` 
+
+If something like dx-toolkit 0.360.0 appears, you should be good to go. If it doesn't, it is probably because your computer doesn't know the path for where to find it, so this has to be updated manually. 
+
+To do this, first check where it has installed by typing 
 
 `pip show dxpy`
 
@@ -56,9 +60,19 @@ You will get a whole bunch of info, but look for the line called Location: that 
 
 `C:\Users\scott\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages`
 
-Your installation will be in the Python313 folder at this location in the 'Scripts' rather than 'site-packages' folder, so something like the following
+Your installation will be in the Python313 folder at this location in a 'Scripts' rather than 'site-packages' subfolder, so in this case
 
 `C:\Users\scott\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts`
+
+To update the path, do the following
+
+- Search Environment Variables in the Start Menu → open Edit environment variables for your account  
+- Under User variables, highlight Path → click Edit  
+- Click New, and paste that path (in this case C:\Users\scott\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts)  
+- Click OK a few times to escape the settings  
+- Restart VS Code  
+
+
 
 
 
