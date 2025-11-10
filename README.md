@@ -68,9 +68,27 @@ To update the path, do the following
 
 - Search Environment Variables in the Start Menu → open Edit environment variables for your account  
 - Under User variables, highlight Path → click Edit  
-- Click New, and paste that path (in this case C:\Users\scott\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts)  
+- Click New, and paste the path (in this case C:\Users\scott\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\Scripts)  
 - Click OK a few times to escape the settings  
-- Restart VS Code  
+- Restart VS Code
+
+DX Toolkit should now be installed and ready to go on your machine.
+
+## Logging in
+
+In the terminal, type
+
+`dx login`
+
+When prompted, enter your username, password, and 6-digit code from your authentication app (Okta Verify). Note that nothing will appear on the screen when you are typing your password.
+
+If you only have one active project on the RAP you should automatically be logged into that. If you have multiple, you can choose which one you want using the command
+
+`dx select`
+
+Now by typing either `pwd` or`dx pwd` into your terminal, you will be able to see which directory you are currently working in on both your local machine and the RAP, respectively. 
+
+
 
 
 
