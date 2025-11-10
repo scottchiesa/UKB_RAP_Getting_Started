@@ -142,7 +142,20 @@ You can also upload these files to the new folder on your RAP project space so y
 
 `dx upload app* --destination project-XXXXXXXXXXXXXXXXX:/Tabular_Data/`
 
-Now you have your data dictionary, you can easily extract the variables you need for your analysis. Make a note of the exact entity (column 1)and variable (column 2) names you want from the data dictionary as these have to be supplied in the form 'entity.name' and be exactly as listed in the dictionary. So for example, if you wanted to extract participant sex (row 28 in the above screenshot) the variable would be called 'participant.p31'. If you wanted Spirometry Method though, you would need to decide if you wanted it at Instance 0, 1, 2, or 3 (rows 24-27 which correspond to the initial assessment visit, first repeat visit, first imaging visit, and repeat imaging visit, respectively). If it was instance 0 (baseline visit when all 500k attended), the variable would be called 'participant.p23_i0'. This can get more detailed still when there are measures that are taken repeatedly. So for systolic blood pressure for example, as this was measured twice in each person and you might want an average of the two, you would need variables 'participant.p4080_i0_a0' and 'participant.p4080_i0_a1'.
+Now you have your data dictionary, you can easily extract the variables you need for your analysis. Make a note of the exact entity (column 1)and variable (column 2) names you want from the data dictionary as these have to be supplied in the form 'entity.name' and be exactly as listed in the dictionary. 
+
+So for example, if you wanted to extract participant sex (row 28 in the above screenshot) the variable would be called 'participant.p31'. Similarly, participant ID would be 'participant.peid'.
+
+Any variable measured repeatedly over time though also has an 'instance' attached to it. So if you wanted spirometry method for example (rows 24-27 on above screenshot), you would need to decide if you wanted it at Instance 0, 1, 2, or 3 (which correspond to the initial assessment visit, first repeat visit, first imaging visit, and repeat imaging visit, respectively). If it was instance 0 (baseline visit when all 500k attended), the variable would be called 'participant.p23_i0'. 
+
+This can get more detailed still when there are measures that are taken repeatedly at each visit, which are then listed as arrays. So for systolic blood pressure for example, as this was measured twice in each person at each visit and you might want an average of the two, you would need both 'participant.p4080_i0_a0' and 'participant.p4080_i0_a1'.
+
+Once you have made a list of all the variables you want (just age and sex here as an example), you can quickly create a dataset containing only these by using the following
+
+dx extract_dataset project-J1qvq8QJ69pGx77pKyKFb915:record-J41BK60JjX0Z1QfyzZJFVbGj \
+    --fields participant.eid,participant.p31 \
+    -o ./qc_vars.csv
+`
 
 
 
