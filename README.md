@@ -34,7 +34,10 @@ It is also very important to understand how the filesystem works when you are mo
 
 ## Installing DX Toolkit
 
-DX Toolkit is the command-line interface (CLI) that lets you interact with the DNAnexus platform, the underlying system running the UKB RAP. By prefacing certain commands in your terminal with 'dx', you can perform actions inside the RAP in a similar way to on your local machine. So for example, if you type `pwd` into your terminal it will tell you your current working directory on your machine (e.g. /c/User/UKB). If you type `dx pwd` though (once you're logged into the RAP), it will give you the current working directory on the RAP (e.g. /home/dnanexus/). This lets you use the same terminal to control files both on your local machine and on the RAP.  
+DX Toolkit is the command-line interface (CLI) that lets you interact with the DNAnexus platform, the underlying system running the UKB RAP. By prefacing certain commands in your terminal with 'dx', you can perform actions inside the RAP in a similar way to on your local machine. So for example, if you type `pwd` into your terminal it will tell you the current working directory on your machine (e.g. /c/User/UKB/). If you type `dx pwd` though (presuming you're logged into the RAP), it will give you the current working directory on the RAP (e.g. /home/dnanexus/). This lets you use the same terminal to control files both on your local machine and on the RAP.  
+
+To install DX Toolkit, open VS Code and select 'Terminal -> New Terminal'. Once the terminal opens at the bottom of the screen, click on the arrow next to the + sign on the right of the page (marked on screenshot) and change from powershell to bash (so the terminal recognises Linux commands).
+
 
 
 
