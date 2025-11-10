@@ -152,9 +152,7 @@ This can get more detailed still when there are measures that are taken repeated
 
 Once you have made a list of all the variables you want (just age and sex here as an example), you can quickly create a dataset containing only these by using the following
 
-`dx extract_dataset project-J1qvq8QJ69pGx77pKyKFb915:record-J41BK60JjX0Z1QfyzZJFVbGj \
-    --fields participant.eid,participant.p31 \
-    -o ./qc_vars.csv`
+`dx extract_dataset project-JXXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX --fields participant.eid,participant.p31 -o ./extracted_data.csv`
 `
 
 
