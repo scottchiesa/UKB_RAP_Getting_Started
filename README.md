@@ -76,7 +76,16 @@ DX Toolkit should now be installed and ready to go on your machine.
 
 ## Logging in
 
-In the terminal, type
+Before logging in for the first time, you may need to set up an API token. You can easily do this using the following steps
+
+- Go to the UK Biobank RAP website  
+- Click your profile icon → “Profile” → “API Tokens.”
+- Click “Generate New Token.”  
+- Give it a label.  
+- Set the expiry time.  
+- Copy the token (it looks like a long string of letters and numbers).  
+
+NO wgo back to your terminal and type
 
 `dx login`
 
@@ -86,7 +95,7 @@ If you only have one active project on the RAP you should automatically be logge
 
 `dx select`
 
-Now by typing either `pwd` or`dx pwd` into your terminal, you will be able to see which directory you are currently working in on both your local machine and the RAP, respectively. 
+Now type either `pwd` or`dx pwd` into your terminal and you will see that each lists which directory you are currently working in on either your local machine or the RAP, respectively. 
 
 
 
