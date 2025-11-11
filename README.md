@@ -13,9 +13,9 @@ GitBash - Download at [https://git-scm.com/install/]
 
 **Note that there are countless programmes and methods for using CLI, these are just the ones I currently use**
 
-## Prior Knowledge Needed
+## Assumptions
 
-This tutorial assumes that users have some knowledge of basic Linux commands that can be typed into a terminal such as:
+This tutorial assumes that users have already signed up for UK Biobank, have an approved project, and are registered to use the UKB RAP. It also assumes some knowledge of basic Linux commands that can be typed into a terminal such as:
 
 `pwd` - display present working directory  
 `cd` - change directory (~ for home, . for current, .. for one directory up)  
@@ -184,11 +184,13 @@ Any variable measured repeatedly over time though also has an 'instance' attache
 
 This can get more detailed still when there are measures that are taken repeatedly at each visit, which are then listed as arrays. So for systolic blood pressure for example, as this was measured twice in each person at each visit and you might want an average of the two, you would need both 'participant.p4080_i0_a0' and 'participant.p4080_i0_a1'.
 
-Once you have made a list of all the variables you want (just age and sex here as an example), you can quickly create a dataset containing only these by using the following
+Once you have made a list of all the variables you want (just age and sex here as an example), you can quickly create a dataset containing only these by using the following command with each of your variable names listed after the flag for --fields and separated by commas.
 
 `dx extract_dataset project-JXXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX --fields participant.eid,participant.p31 -o ./extracted_data.csv`
-`
 
+Again, there are potentially quicker ways locate and list your files of interest using Linux commands and submitting a txt file list of everything needed, but the above is shown as a basic example.
+
+Now you have extracted your data, make sure you upload it to your project space for permanent storage
 
 
 
