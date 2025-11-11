@@ -27,7 +27,7 @@ This tutorial assumes that users have some knowledge of basic Linux commands tha
 
 It is also very important to understand how the filesystem works when you are either moving around the RAP, or between the RAP and your local machine. This can become quite confusing as the RAP works on an object-based file system (where every file has a unique identifier) rather than a POSIX-based system (where files are arranged in folders like most people are used to). The RAP does use something called DxFUSE to make it look like the files are in folders though, so a lot of the time you may be using standard commands to move around similar to what you would use in your local machine. Some examples of commands and what they would do if you were in a POSIX-based system and in a folder called `/c/User/UKB/Data/` are provided below.
 
-`pwd` Would return the text /c/User/UKB/Data/ to show you where you are
+`pwd` Would return the text /c/User/UKB/Data/ to show you where you are  
 `cd ~` Would take you back to your home directory (so from /c/User/UKB/Data to /c/)   
 `cd ..` Would take you up one level from data to UKB (so from /c/User/UKB/Data to /c/User/UKB/)  
 `cd ../Scripts` If your UKB folder contained a second folder called Scripts, this would take you directly from the Data to Scripts (so up one directory from /c/User/UKB/Data into /c/User/UKB/ then back down into /c/User/UKB/Scripts).  
@@ -101,9 +101,9 @@ Now type either `pwd` or`dx pwd` into your terminal and you will see that each l
 
 ## Setting Up a Cloud Workstation 
 
-Next it is necessary to set up a virtual environment within the RAP to access all of your project files and run any analyses. This can be established as a Cloud Workstation, which lets you access and work with data stored on the DNAnexus Platform without having to download files to your computer.
+Next it is necessary to set up a virtual environment within the RAP to access all of your project files and run any analyses. This can be established as a Cloud Workstation, a virtual workspace which lets you access and work with data stored on the DNAnexus Platform without having to download files to your computer.
 
-Before doing this for the first time, you will need to configure ssh access to let you get into this virtual environment. Do this by typing the following command and following any instructions
+Before doing this for the first time, you will need to configure ssh access to let you get into this virtual environment. Do this by typing the following command and following any instructions.
 
 `dx ssh_config`
 
@@ -114,6 +114,17 @@ Now activate your Cloud Workstation using the command
 At this point you will be given three options. More on these can be seen at https://platform.dnanexus.com/panx/tool/app/cloud_workstation. If you press enter to bypass these you will by default be logged in for 1hr with the following settings for memory, storage, and processors - mem1_ssd1_v2_x8. If you want to choose different settings, run the below code instead with your choice of setting
 
 `dx run --ssh app-cloud_workstation --instance-type mem1_ssd1_v2_x36`
+
+It may take a few minutes to log-in, but soon you should see a screen that looks like the following
+
+<img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/blob/main/cloud.png">
+
+Before your virtual space is ready to use, there are two more commands you need to type in to point it to the correct project.
+
+`unset DX_WORKSPACE_ID`
+`dx cd $DX_PROJECT_CONTEXT_ID:`
+
+Your virtual workstation should now be ready to use.
 
 
 
