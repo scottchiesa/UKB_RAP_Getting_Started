@@ -116,7 +116,7 @@ Now you can activate a Cloud Workstation using the command
 
 `dx run --ssh app-cloud_workstation`
 
-At this point you will be given three options. More on these can be seen at https://platform.dnanexus.com/panx/tool/app/cloud_workstation. For now though you can just press enter to bypass these and you will - by default - be logged into a virtual environment for 1hr with the following computing hardware - mem1_ssd1_v2_x8. If you want to choose different settings, run the below code instead in which you can choose your desired setting
+At this point you will be given three options. More on these can be seen at https://platform.dnanexus.com/panx/tool/app/cloud_workstation. For now though you can just press enter to bypass these and by default you will be logged into a virtual environment for 1hr with the following computing hardware - mem1_ssd1_v2_x8. If you want to choose different settings, run the below code instead in which you can choose your desired setting
 
 `dx run --ssh app-cloud_workstation --instance-type mem1_ssd1_v2_x36`
 
