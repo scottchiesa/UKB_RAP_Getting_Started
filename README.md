@@ -199,7 +199,7 @@ Once you have made a list of all the variables you want (just age and sex here a
 
 `dx extract_dataset project-JXXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX --fields participant.eid,participant.p31 -o ./extracted_data.csv`
 
-Again, there are potentially quicker ways locate and list your files of interest using Linux commands and submitting a txt file list of everything needed, but the above is shown as a basic example.
+There are potentially quicker ways to locate and list your variables of interest using different Linux commands and then submitting a txt file list of everything needed, but the above is shown as a basic example.
 
 Now you have extracted your data, make sure you upload it to your project space for permanent storage as anything stored on a Cloud Workstation is automatically deleted every time it is terminated. This can again easily be done using a command like the following
 
