@@ -15,7 +15,7 @@ GitBash - Download at [https://git-scm.com/install/]
 
 ## Assumptions
 
-This tutorial assumes that users have already registered as users of UK Biobank, have an approved project, have completed their training and are registered to use the UKB RAP, and have dispensed their data to their project space. 
+This tutorial assumes that users have already registered with UK Biobank, have an approved project, have completed their training and are registered to use the UKB RAP, and have dispensed their data to their project space. 
 
 It also assumes some knowledge of basic Linux commands that can be typed into a terminal, some examples of which can be seen below:
 
