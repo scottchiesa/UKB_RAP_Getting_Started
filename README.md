@@ -124,9 +124,11 @@ Before your virtual space is ready to use, there are two more commands you need 
 `unset DX_WORKSPACE_ID`
 `dx cd $DX_PROJECT_CONTEXT_ID:`
 
-Your virtual workstation should now be ready to use!
+Your virtual workstation should now be ready to use! 
 
-**Important: As long as you are connected to a Cloud Workstation you are being charged money, so remember to always terminate the session once you're done! This can be done with the following command**
+Note that from this point on, typing a command such as `ls` will list everything in your temporary virtual environment (i.e. the Cloud Workstation), whereas `dx ls` will list everything in your project space (your permanent file storage space).
+
+**Important: Cloud Workstations are temporary virtual environments and anything created or stored on them is therefore permanently deleted as soon as the workstations times out or is shut down. Make sure to upload any important files back to your permanent project storage as soon as you make them to avoid them being lost. Also note that as long as you are connected to a Cloud Workstation you are being charged money, so remember to always terminate the session once you're done! This can be done with the following command**
 
 `dx terminate $DX_JOB_ID`
 
@@ -190,7 +192,21 @@ Once you have made a list of all the variables you want (just age and sex here a
 
 Again, there are potentially quicker ways locate and list your files of interest using Linux commands and submitting a txt file list of everything needed, but the above is shown as a basic example.
 
-Now you have extracted your data, make sure you upload it to your project space for permanent storage
+Now you have extracted your data, make sure you upload it to your project space for permanent storage as anything stored on a Cloud Workstation is automatically deleted every time it is terminated. This can again easily be done using a command like the following
+
+`dx upload extracted_phenotpyes.csv --destination project-XXXXXXXXXXXXXXXXXXXXXX:/Data/ `
+
+You should now have a dataset of all necessary variables ready for analysis!
+
+## Running a Basic Analysis on Tabular Data using R
+
+Coming soon.
+
+## Submitting a batch of Swiss Army Knife jobs to run in parallel
+
+Coming soon.
+
+
 
 
 
