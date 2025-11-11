@@ -181,7 +181,7 @@ You should now have an Excel file in the home directory of your local machine (i
 
 <img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/blob/main/ddd.png">
 
-At this point it is a good idea to also upload these files to your RAP project space so you have them stored there for future acccess. This can be done using the command below
+At this point it is a good idea to also upload these files to your RAP project space so you have them stored there for future acccess. This can be done from within the virtual environment using the command below
 
 `dx upload -r Tabular_Data/ --destination project-XXXXXXXXXXXXXXXXXXXXXX:/Tabular_Data/ `
 
