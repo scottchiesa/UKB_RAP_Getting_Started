@@ -1,4 +1,4 @@
-# Getting Started on the UK Biobank Research Analysis Platform using Command Line Interface (CLI)
+# Getting Started on the UK Biobank Research Analysis Platform (RAP) using Command Line Interface (CLI)
 
 The UK Biobank Research Analysis Platform (RAP) is a secure cloud-based environment that allows approved researchers to access, store, and analyse UK Biobank data without downloading it locally. There are countless tutorials, YouTube videos, and forums available on the internet for the myriad of functions the RAP performs. If you are not an experienced user, however, it can still be very confusing and difficult to find where to even get started. 
 
