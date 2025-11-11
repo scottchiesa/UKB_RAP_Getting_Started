@@ -25,16 +25,18 @@ This tutorial assumes that users have some knowledge of basic Linux commands tha
 `mv` - move file  
 `rm` - delete file (can't be undone so be careful!)  
 
-It is also very important to understand how the filesystem works when you are moving around or trying to access files. This can become quite confusing on the RAP depending on how you are accessing the data or running analyses, but if you were in a local machine in the following folder - /c/User/UKB/Data/
+It is also very important to understand how the filesystem works when you are either moving around the RAP, or between the RAP and your local machine. This can become quite confusing as the RAP works on an object-based file system (where every file has a unique identifier) rather than a POSIX-based system (where files are arranged in folders like most people are used to). The RAP does use something called DxFUSE to make it look like the files are in folders though, so a lot of the time you may be using standard commands to move around similar to what you would use in your local machine. Some examples of commands and what they would do if you were in a POSIX-based system and in a folder called `/c/User/UKB/Data/` are provided below.
 
+`pwd` Would return the text /c/User/UKB/Data/ to show you where you are
 `cd ~` Would take you back to your home directory (so from /c/User/UKB/Data to /c/)   
-`cd ..` Would take you up one level to UKB (so from /c/User/UKB/Data to /c/User/UKB/)  
-`cd ../Scripts` If your UKB folder contained folders called both Data and Scripts, this would take you directly from the former to latter (so up one directory from /c/User/UKB/Data into /c/User/UKB/ then back down into /c/User/UKB/Scripts).  
-`./` This would point to files in your current directory
+`cd ..` Would take you up one level from data to UKB (so from /c/User/UKB/Data to /c/User/UKB/)  
+`cd ../Scripts` If your UKB folder contained a second folder called Scripts, this would take you directly from the Data to Scripts (so up one directory from /c/User/UKB/Data into /c/User/UKB/ then back down into /c/User/UKB/Scripts).  
+`ls -l ./` Would list all files in your current directory (Data)
+`ls -l ../` Would list all files one folder up (UKB)
 
 ## Installing DX Toolkit
 
-DX Toolkit is the command-line interface (CLI) that lets you interact with the DNAnexus platform, the underlying system running the UKB RAP. By prefacing certain commands in your terminal with 'dx', you can perform actions inside the RAP in a similar way to on your local machine. So for example, if you type `pwd` into your terminal it will tell you the current working directory on your machine (e.g. /c/User/UKB/). If you type `dx pwd` though (presuming you're logged into the RAP), it will give you the current working directory on the RAP (e.g. /home/dnanexus/). This lets you use the same terminal to control files both on your local machine and on the RAP.  
+DX Toolkit is the command-line interface (CLI) that lets you interact with the DNAnexus platform (the underlying system running the UKB RAP). By prefacing certain commands in your terminal with 'dx', you can perform actions inside the RAP in a similar way to on your local machine. So for example, if you type `pwd` into your terminal it will tell you the current working directory on your machine (e.g. /c/User/UKB/). If you type `dx pwd` though (presuming you're logged into the RAP), it will give you the current working directory on the RAP (e.g. /home/dnanexus/). This lets you use the same terminal to control files both on your local machine and on the RAP.  
 
 To install DX Toolkit, open VS Code and select 'Terminal -> New Terminal'. Once the terminal opens at the bottom of the screen, click on the arrow next to the + sign on the right of the page (marked on screenshot) and change from powershell to bash (so the terminal recognises Linux commands).
 
@@ -96,6 +98,24 @@ If you only have one active project on the RAP you should automatically be logge
 `dx select`
 
 Now type either `pwd` or`dx pwd` into your terminal and you will see that each lists which directory you are currently working in on either your local machine or the RAP, respectively. If dx pwd shows your RAP home directory, you're logged in!
+
+## Setting Up a Cloud Workstation 
+
+Next it is necessary to set up a virtual environment within the RAP to access all of your project files and run any analyses. This can be established as a Cloud Workstation, which lets you access and work with data stored on the DNAnexus Platform without having to download files to your computer.
+
+Before doing this for the first time, you will need to configure ssh access to let you get into this virtual environment. Do this by typing the following command and following any instructions
+
+`dx ssh_config`
+
+Now activate your Cloud Workstation using the command
+
+`dx run --ssh app-cloud_workstation`
+
+At this point you will be given three options. More on these can be seen at https://platform.dnanexus.com/panx/tool/app/cloud_workstation. If you press enter to bypass these you will by default be logged in for 1hr with the following settings for memory, storage, and processors - mem1_ssd1_v2_x8. If you want to choose different settings, run the below code instead with your choice of setting
+
+`dx run --ssh app-cloud_workstation --instance-type mem1_ssd1_v2_x36`
+
+
 
 
 ## Creating a Data Dictionary and Extracting the Data Required for your Analysis
