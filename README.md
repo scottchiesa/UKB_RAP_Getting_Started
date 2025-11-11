@@ -169,7 +169,7 @@ Once you have both of these, you can create your data dictionary by simply typin
 
 `dx extract_dataset project-XXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX -ddd --delimiter ","`
 
-If you happen to get an error message whne you run the above command that tells you that something called pandas is necessary to create these files, simply install it using the following code then run the above code again
+If you happen to get an error message when you run the above command that tells you that something called pandas is necessary to create these files, simply install it using the following code then run the above code again
 
 `pip3 install pandas`
 
@@ -177,7 +177,7 @@ You should should now create three csv files starting with the word 'app' on you
 
 `dx download project-XXXXXXXXXXXXXXXX:/Tabular_Data/appXXXXX_XXXXXXXXXXXXXXXX.dataset.data_dictionary.csv -o data_dictionary.txt
 
-You shold now have an Excel file in the home directory of your local machine (i.e. your computer/laptop) that looks something like the example below
+You should now have an Excel file in the home directory of your local machine (i.e. your computer/laptop) that looks something like the example below
 
 <img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/blob/main/ddd.png">
 
