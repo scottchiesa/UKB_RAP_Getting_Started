@@ -53,7 +53,7 @@ In the terminal, write the following
 
 It may now ask you to upgrade. If it does, copy and paste the command it supplies to do so.
 
-Once complete. check if it has installed properly by typing 
+Once complete, check if DX Toolkit has installed properly by typing 
 
 `dx --version` 
 
