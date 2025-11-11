@@ -124,36 +124,35 @@ Before your virtual space is ready to use, there are two more commands you need 
 `unset DX_WORKSPACE_ID`
 `dx cd $DX_PROJECT_CONTEXT_ID:`
 
-Your virtual workstation should now be ready to use.
+Your virtual workstation should now be ready to use!
 
+**Important: As long as you are connected to a Cloud Workstation you are being charged money, so remember to always terminate the session once you're done! This can be done with the following command**
 
-
+`dx terminate $DX_JOB_ID`
 
 ## Creating a Data Dictionary and Extracting the Data Required for your Analysis
 
 The RAP contains two types of data, tabular (i.e. a big spreadsheet with lots of variables that have been collected over the years like age, sex, BMI, etc), and bulk (i.e. genetic data, raw scans from MRIs, etc).
 
-One of the first things you might want to do once inside the RAP is create a data dictionary that lists every tabular variable that your project contains. You can then use this to identify the variable names you need to extract for your analysis in R/Stata/etc. For many people, this will be the only UK Biobank data they ever use.
+One of the first things you'll likely want to do once inside the RAP is create a data dictionary that lists every tabular variable that your project contains. You can then use this to identify the variable names you need to extract for your analysis in R/Stata/etc. For many people, this will be the only UK Biobank data they ever use.
 
-First, make sure you are in your home directory (dx pwd to check) and then make a new folder to store your data in using the command
+First, make sure you are logged into your Cloud Workstation as described above and then make a new folder within your virtual environment to store your data using the command
 
-`dx mkdir Tabular_Data`
+`mkdir Tabular_Data`
 
 Now go into this folder using
 
-`dx cd ./Tabular_Data` 
+`cd Tabular_Data/` 
 
-Note the ./ which tells the RAP to go from your current RAP working directory which should be home to the new folder you just made.
-
-Now you need to create your data dictionary. This step only needs to be carried out once and then the necessary files will be available to use for data extraction from that point on. There are two bits of information you need here, your project ID and your record ID. You can find your project ID by typing 
+Now you need to create your data dictionary. This step only needs to be carried out once and then the necessary files will be available to use for data extraction from that point on. There are two bits of information you need here, your project ID and your record ID. You can find your project ID (which will look like project-XXXXXXXXXXXXXX) by typing 
 
 `dx find projects`
 
-and your record ID by typing 
+and your record ID (which will look like record-XXXXXXXXXXXXXX) by typing 
 
-`dx ls -la`
+`dx ls -l`
 
-and looking for something that looks like 
+You want the one after the .dataset file which will look something like 
 
 `closed  2025-10-29 23:45:30           app71702_20251029213934.dataset (record-XXXXXXXXXXXXXXXXX)`
 
@@ -161,17 +160,21 @@ Once you have both of these, you can create your data dictionary with the follow
 
 `dx extract_dataset project-XXXXXXXXXXXXXXXXX:record-XXXXXXXXXXXXXXXXX -ddd --delimiter ","`
 
-If you get an error message telling you that software called pandas is necessary to create these files, install this using the following code then run the above code again
+If you get an error message telling you that something called pandas is necessary to create these files, install it using the following code then run the above code again
 
 `pip3 install pandas`
 
-This should now create three csv files starting with the word 'app' on your local machine in your current working directory. The file ending with .data_dictionary.csv can now be opened in Excel to view all of the variables available to you and will look something like the example below
+This should now create three csv files starting with the word 'app' on your local machine in your Tabular_Data folder (provided you were in this folder when you ran the dx extract_dataset command). The file ending with .data_dictionary.csv can now be used to view all of the variables available. There are various ways to do this in the workstation, but for now it might be easiest to open a new local terminal in VS Code (Terminal -> New Terminal) and type the following command to download it to your computer
+
+`dx download project-XXXXXXXXXXXXXXXX:/Tabular_Data/appXXXXX_XXXXXXXXXXXXXXXX.dataset.data_dictionary.csv -o data_dictionary.txt
+
+You shold now have an Excel file that looks something like the example below
 
 <img src = "https://github.com/scottchiesa/UKB_RAP_Getting_Started/blob/main/ddd.png">
 
-You can also upload these files to the new folder on your RAP project space so you have them stored there too. Use a * as a wildcard to select all relevant files starting with 'app when doing so and type dx ls-l to check they have appeared as expected.
+You should now also upload these files to your RAP project space so you have them stored there for future acccess. Using a * as a wildcard to select all relevant files starting with 'app' when doing so and type dx ls-l to check they have appeared as expected.
 
-`dx upload app* --destination project-XXXXXXXXXXXXXXXXX:/Tabular_Data/`
+`dx upload -r Tab/ --destination project-XXXXXXXXXXXXXXXXXXXXXX:/Tab/ `
 
 Now you have your data dictionary, you can easily extract the variables you need for your analysis. Make a note of the exact entity (column 1)and variable (column 2) names you want from the data dictionary as these have to be supplied in the form 'entity.name' and be exactly as listed in the dictionary. 
 
