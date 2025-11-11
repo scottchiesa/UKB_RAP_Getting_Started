@@ -126,7 +126,7 @@ It may take a few minutes to log-in, but soon your terminal should update to dis
 
 Before your virtual space is ready to use, there are two more commands you need to type in order for it to find your project.
 
-`unset DX_WORKSPACE_ID`
+`unset DX_WORKSPACE_ID`  
 `dx cd $DX_PROJECT_CONTEXT_ID:`
 
 Your virtual workstation should now be ready to use! 
