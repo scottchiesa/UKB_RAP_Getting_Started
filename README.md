@@ -211,7 +211,7 @@ You should now have a dataset of all necessary variables ready for analysis!
 
 Coming soon.
 
-## Submitting a batch of Swiss Army Knife jobs to run in parallel
+## Submitting a Batch of Swiss Army Knife Jobs to Run in Parallel
 
 Coming soon.
 
