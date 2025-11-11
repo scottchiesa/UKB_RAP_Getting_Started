@@ -35,9 +35,9 @@ Some examples of commands and what they would do if you typed them into a POSIX-
 `cd ~` Would take you back to your home directory (so from /c/Users/scott/UKB/Data to /c/)   
 `cd ..` Would take you up one level from data to UKB (so from /c/Users/scott/UKB/Data to /c/User/UKB/)  
 `cd ../Scripts` Would take you directly from Data to Scripts (so up one directory from /c/Users/scott/UKB/Data into /c/Users/scott/UKB/ then back down into /c/Users/scott/UKB/Scripts).  
-`ls -l ~/` Would list all files in your home directory (/c/Users/scott/)
-`ls -l ./` Would list all files in your current directory (/c/Users/scott/UKB/Data)
-`ls -l ../` Would list all files one folder up (/c/Users/scott/UKB)
+`ls -l ~/` Would list all files in your home directory (/c/Users/scott/)  
+`ls -l ./` Would list all files in your current directory (/c/Users/scott/UKB/Data)  
+`ls -l ../` Would list all files one folder up (/c/Users/scott/UKB)  
 
 ## Installing DX Toolkit
 
