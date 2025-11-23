@@ -175,7 +175,7 @@ If you happen to get an error message when you run the above command that tells 
 
 You should now see three csv files starting with the word 'app' on your virtual environment in your Tabular_Data folder (provided this was your present working directory when running the dx extract_dataset command). The file ending with .data_dictionary.csv can now be used to view all of the variables available to you and is specific to your project. There are various ways to do this in the workstation, but for now it might be easiest to just open a new local terminal in VS Code (Terminal -> New Terminal) and type the following command to download it as a csv file that you can open in Excel on your computer
 
-`dx download project-XXXXXXXXXXXXXXXX:/Tabular_Data/appXXXXX_XXXXXXXXXXXXXXXX.dataset.data_dictionary.csv -o data_dictionary.txt
+`dx download project-XXXXXXXXXXXXXXXX:/Tabular_Data/appXXXXX_XXXXXXXXXXXXXXXX.dataset.data_dictionary.csv -o data_dictionary.txt`
 
 You should now have an Excel file in the home directory of your local machine (i.e. your computer/laptop) that looks something like the example below
 
@@ -183,7 +183,7 @@ You should now have an Excel file in the home directory of your local machine (i
 
 At this point it is a good idea to also upload these files to your RAP project space so you have them stored there for future acccess. This can be done from within the virtual environment using the command below
 
-`dx upload -r Tabular_Data/ --destination project-XXXXXXXXXXXXXXXXXXXXXX:/Tabular_Data/ `
+`dx upload -r Tabular_Data/ --destination project-XXXXXXXXXXXXXXXXXXXXXX:/Tabular_Data/`
 
 ## Extracting the Data Required for your Analysis
 
